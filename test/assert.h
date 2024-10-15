@@ -64,7 +64,7 @@ template <typename T, typename U>
 void AssertEqualImpl(const T& t, const U& u, const std::string& t_str, const std::string& u_str, const std::string& file,
                      const std::string& func, unsigned line, const std::string& hint) {
     if (t != u) {
-        std::cout << boolalpha;
+        std::cout << std::boolalpha;
         std::cout << file << "(" << line << "): " << func << ": ";
         std::cout << "ASSERT_EQUAL(" << t_str << ", " << u_str << ") failed: ";
         std::cout << t << " != " << u << ".";
