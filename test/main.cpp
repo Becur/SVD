@@ -1,5 +1,6 @@
 #include "test_matrix.h"
 
 int main(){
-    TestMatrix();
+    const float ERROR_RATE = 1e-6;
+    TestMatrix(ERROR_RATE);
 }

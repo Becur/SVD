@@ -1,23 +1,30 @@
 #pragma once
 
-void TestMatrix();
+void TestMatrix(const float error_rate);
 
 void TestEqual();
 void TestCopyMove();
 void TestGetSize();
+void TestEmpty();
+void TestCorrect();
 void TestRandomAccess();
 void TestSwap();
-void TestAssignment();
 void TestPushBack();
 void TestPopBack();
-void TestTransp();
+
 void TestAdding();
-void TestMultiplication();
-void TestGetNorma();
-void TestNormalize();
+void TestUnarySign();
+void TestAddNum();
+void TestAddMatrix();
+
+void TestMultiplication(const float error_rate);
+void TestMultNum(const float error_rate);
+void TestMultMatrix();
+
+void TestNormalize(const float error_rate);
+
+void TestTransp();
 
 void TestPrint();
-
-void TestParceLineNumbers();
 
 void TestParceCSRFormat();
