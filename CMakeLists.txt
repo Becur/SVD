@@ -28,3 +28,5 @@ find_package(GTest REQUIRED)
 include_directories(include)
 
 add_subdirectory( test build/test )
+
+add_subdirectory( example build/example )

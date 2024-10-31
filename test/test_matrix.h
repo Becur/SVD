@@ -1,6 +1,6 @@
 #pragma once
 
-void TestMatrix(const float error_rate);
+int main/*TestMatrix*/();
 
 void TestEqual();
 void TestCopyMove();

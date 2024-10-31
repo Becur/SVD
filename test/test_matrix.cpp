@@ -9,11 +9,11 @@
 #include <chrono>
 #include <stdexcept>
 #include <cmath>
-#include <iostream>
 
-const float ERROR_RATE = 1e-6;
 
-void TestMatrix(const float error_rate){
+int main/*TestMatrix*/(){
+    const float ERROR_RATE = 1e-6;
+
     TestPrint();
 
     TestEqual();
@@ -26,13 +26,15 @@ void TestMatrix(const float error_rate){
     TestPushBack();
     TestPopBack();
     TestAdding();
-    TestMultiplication(error_rate);
+    TestMultiplication(ERROR_RATE);
 
     TestTransp();
 
-    TestNormalize(error_rate);
+    TestNormalize(ERROR_RATE);
 
     TestParceCSRFormat();
+
+    return 0;
 }
 
 void TestPrint(){
@@ -332,10 +334,10 @@ void TestRandomAccess(){
     std::vector<std::vector<int>> mat({{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
     Matrix<int> m(mat);
     std::mt19937 generator(std::chrono::system_clock::now().time_since_epoch().count());
-    std::uniform_int_distribution unifom_dist(0, 2);
+    std::uniform_int_distribution uniform_dist(0, 2);
     for(int k = 0; k < 100; ++k){
-        int random_i = unifom_dist(generator);
-        int random_j = unifom_dist(generator);
+        int random_i = uniform_dist(generator);
+        int random_j = uniform_dist(generator);
         ASSERT_EQUAL(mat[random_i][random_j], m[random_i][random_j]);
     }
 }
@@ -862,7 +864,6 @@ void TestNormalize(const float error_rate){
     }
 }
 }
-
 
 void TestParceCSRFormat(){
 {
